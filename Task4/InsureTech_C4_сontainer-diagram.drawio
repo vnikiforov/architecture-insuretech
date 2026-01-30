@@ -1,0 +1,361 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
+  <diagram id="51zmUan4mFf6pz3q3UUt" name="InsureTech - Event-Driven Redesign">
+    <mxGraphModel dx="4607" dy="3799" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <object placeholders="1" c4Name="InsureTech Prod" c4Type="SystemScopeBoundary" c4Application="Kubernetes Cluster" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;&lt;div style=&quot;text-align: left&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Application%]&lt;/div&gt;" id="boundary">
+          <mxCell style="rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=none;strokeColor=#666666;fontColor=#333333;labelBackgroundColor=none;align=left;verticalAlign=bottom;labelBorderColor=none;spacingTop=0;spacing=10;dashPattern=8 4;metaEdit=1;rotatable=0;perimeter=rectanglePerimeter;noLabel=0;labelPadding=0;allowArrows=0;connectable=0;expand=0;recursiveResize=0;editable=1;pointerEvents=0;absoluteArcSize=1;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="100" y="-90" width="1730" height="1710" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Event Bus" c4Type="Message Broker" c4Technology="Apache Kafka" c4Description="Централизованная шина событий для асинхронной коммуникации между сервисами. Обеспечивает отказоустойчивость и масштабируемость" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="event-bus">
+          <mxCell style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#9C27B0;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#6A1B9A;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="680" y="910" width="280" height="160" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="InsureTech Web" c4Type="Container" c4Technology="JavaScript, React" c4Description="Веб-приложение InsureTech. Использует Transactional Outbox для надежной отправки событий" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="web-app">
+          <mxCell style="shape=mxgraph.c4.webBrowserContainer2;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;strokeColor=#118ACD;fillColor=#23A2D9;strokeColor=#118ACD;strokeColor2=#0E7DAD;fontSize=12;fontColor=#ffffff;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="250" y="-60" width="240" height="160" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="core-app" c4Type="Container" c4Technology="Kotlin, SpringBoot, Outbox Pattern" c4Description="Монолитное приложение. Использует Transactional Outbox для гарантированной доставки событий в шину" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="core-app">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="260" y="430" width="240" height="140" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="core-db" c4Type="Database" c4Technology="PostgreSQL" c4Description="БД используется для хранения тарифов страховых компаний, заявок клиентов и outbox таблицы" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="core-db">
+          <mxCell style="shape=cylinder3;size=5.9999511718749545;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="460" y="710" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="ins-product-aggregator" c4Type="Container" c4Technology="Kotlin, SpringBoot, Kafka Consumer" c4Description="Сервис подписан на события из шины. Асинхронно обновляет данные о продуктах и публикует события об изменениях" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="product-aggregator">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="1414" y="360" width="240" height="140" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="ins-comp-settlement" c4Type="Container" c4Technology="Kotlin, SpringBoot, Kafka Consumer" c4Description="Сервис подписан на события оформления страховок. Использует CQRS для отделения команд и запросов" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="settlement-service">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="1020" y="540" width="240" height="140" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="ins-comp-settlement-db" c4Type="Database" c4Technology="PostgreSQL" c4Description="БД используется для хранения данных об оформленных страховках и условиях взаиморасчётов. Получает данные через события" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="settlement-db">
+          <mxCell style="shape=cylinder3;size=8.50981588924617;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="1510" y="960" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="client-info" c4Type="Container" c4Technology="Kotlin, SpringBoot, Outbox Pattern" c4Description="Сервис для учёта клиентских данных. Публикует события об изменениях через Transactional Outbox" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="client-info">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="810" y="170" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="client-info-db" c4Type="Database" c4Technology="PostgreSQL" c4Description="БД используется для хранения данных клиентов: ФИО, телефон, паспорт и др. Содержит outbox таблицу" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="client-db">
+          <mxCell style="shape=cylinder3;size=6.172056136592715;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="1330" y="170" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Системы страховых компаний" c4Type="Software System" c4Description="Системы страховых компаний, предоставляющие API для получения актуальных тарифов, андерайтинга и оформления страховых продуктов" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="insurance-systems">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=9;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="2068" y="590" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Системы партнёров" c4Type="Software System" c4Description="Системы партнёров, интегрирующие страховые услуги в свои продукты" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="partner-systems">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="-210" y="520" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Платёжный сервис" c4Type="Software System" c4Description="Внешний платёжный сервис, через который осуществляется оплата страховок. Деньги уходят на счета страховых компаний" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="payment-service">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="-210" y="320" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Клиент" c4Type="Person" c4Description="Клиент" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="client">
+          <mxCell style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="590" y="-310" width="200" height="180" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="HTTP/REST" c4Description="Работа с веб-интерфейсом" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="client-to-web">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="client" target="web-app" edge="1">
+            <mxGeometry width="240" relative="1" as="geometry">
+              <mxPoint x="650" y="10" as="sourcePoint" />
+              <mxPoint x="890" y="10" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="REST -&gt; Outbox" c4Description="1. Оформление страховки 2. Обновление данных клиента" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="web-to-core">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="web-app" target="core-app" edge="1">
+            <mxGeometry width="240" relative="1" as="geometry">
+              <mxPoint x="550" y="290" as="sourcePoint" />
+              <mxPoint x="790" y="290" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="610" y="160" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="Transactional Outbox → Kafka" c4Description="Публикация событий: 1. InsurancePolicyCreated 2. InsurancePolicyUpdated 3. ClientDataChanged" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="core-to-eventbus">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;strokeColor=#9C27B0;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;dashed=1;" parent="1" source="core-app" target="event-bus" edge="1">
+            <mxGeometry width="240" relative="1" as="geometry">
+              <mxPoint x="640" y="500" as="sourcePoint" />
+              <mxPoint x="940" y="380" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="730" y="530" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="Transactional Outbox → Kafka" c4Description="Публикация событий: 1. ClientCreated 2. ClientUpdated 3. ClientDeleted" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="clientinfo-to-eventbus">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;strokeColor=#9C27B0;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;dashed=1;" parent="1" source="client-info" target="event-bus" edge="1">
+            <mxGeometry width="240" relative="1" as="geometry">
+              <mxPoint x="920" y="240" as="sourcePoint" />
+              <mxPoint x="940" y="300" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="880" y="530" />
+                <mxPoint x="810" y="530" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="Kafka Consumer" c4Description="Подписка на события: 1. RefreshProductsRequest 2. InsuranceCompanyUpdated" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="eventbus-to-aggregator">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;strokeColor=#9C27B0;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="event-bus" target="product-aggregator" edge="1">
+            <mxGeometry width="240" relative="1" as="geometry">
+              <mxPoint x="1080" y="380" as="sourcePoint" />
+              <mxPoint x="1220" y="500" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="1300" y="1020" />
+                <mxPoint x="1300" y="470" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="Kafka Consumer" c4Description="Подписка на события: 1. InsurancePolicyCreated 2. InsurancePolicyPaid 3. ProductPriceUpdated" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="eventbus-to-settlement">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;strokeColor=#9C27B0;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="event-bus" target="settlement-service" edge="1">
+            <mxGeometry width="240" relative="1" as="geometry">
+              <mxPoint x="1080" y="460" as="sourcePoint" />
+              <mxPoint x="1220" y="750" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="1100" y="950" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="Kafka Producer" c4Description="Публикация событий: 1. ProductsUpdated 2. ProductPriceChanged 3. NewInsuranceCompanyAdded" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="aggregator-to-eventbus">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;strokeColor=#9C27B0;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="product-aggregator" edge="1">
+            <mxGeometry x="0.0005" width="240" relative="1" as="geometry">
+              <mxPoint x="1350" y="430" as="sourcePoint" />
+              <mxPoint x="919.9999999999995" y="910" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="1414" y="420" />
+                <mxPoint x="920" y="420" />
+              </Array>
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="Kafka Consumer" c4Description="Подписка на события: 1. ProductsUpdated 2. ProductPriceChanged" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="eventbus-to-core">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;strokeColor=#9C27B0;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="event-bus" target="core-app" edge="1">
+            <mxGeometry x="0.175" y="80" width="240" relative="1" as="geometry">
+              <mxPoint x="920" y="380" as="sourcePoint" />
+              <mxPoint x="740" y="500" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="300" y="990" />
+              </Array>
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="REST" c4Description="Получение/сохранение информации о клиентах" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="web-to-clientinfo">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="web-app" target="client-info" edge="1">
+            <mxGeometry width="240" relative="1" as="geometry">
+              <mxPoint x="740" y="240" as="sourcePoint" />
+              <mxPoint x="920" y="240" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="REST" c4Description="Получение/сохранение информации о клиентах" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="core-to-clientinfo">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="core-app" target="client-info" edge="1">
+            <mxGeometry width="240" relative="1" as="geometry">
+              <mxPoint x="740" y="500" as="sourcePoint" />
+              <mxPoint x="920" y="240" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="380" y="340" />
+                <mxPoint x="830" y="340" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="HTTP" c4Description="Проведение оплаты за страховки" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="core-to-payment">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="core-app" target="payment-service" edge="1">
+            <mxGeometry x="0.1034" width="240" relative="1" as="geometry">
+              <mxPoint x="310" y="605" as="sourcePoint" />
+              <mxPoint x="500" y="530" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="340" y="340" />
+              </Array>
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="REST / SOAP / GraphQL" c4Description="Получение информации по продуктам и тарифам (асинхронно, по расписанию)" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="aggregator-to-insurance">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="product-aggregator" target="insurance-systems" edge="1">
+            <mxGeometry x="-0.2143" width="240" relative="1" as="geometry">
+              <mxPoint x="1340" y="500" as="sourcePoint" />
+              <mxPoint x="1620" y="620" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="REST / SOAP / GraphQL" c4Description="Передача данных для взаиморасчётов (асинхронно)" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="settlement-to-insurance">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="settlement-service" target="insurance-systems" edge="1">
+            <mxGeometry width="240" relative="1" as="geometry">
+              <mxPoint x="1340" y="750" as="sourcePoint" />
+              <mxPoint x="1620" y="620" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="1664" y="610" />
+                <mxPoint x="1664" y="670" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="REST" c4Description="Оформление страховок" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="partners-to-core">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="partner-systems" target="core-app" edge="1">
+            <mxGeometry x="-0.2075" width="240" relative="1" as="geometry">
+              <mxPoint x="300" y="595" as="sourcePoint" />
+              <mxPoint x="740" y="500" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="TCP" c4Description="Работа с данными" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="core-to-db">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="core-app" target="core-db" edge="1">
+            <mxGeometry x="0.2941" width="240" relative="1" as="geometry">
+              <mxPoint x="620" y="570" as="sourcePoint" />
+              <mxPoint x="620" y="680" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="380" y="660" />
+                <mxPoint x="580" y="660" />
+              </Array>
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="TCP" c4Description="Работа с данными" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="clientinfo-to-db">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="client-info" target="client-db" edge="1">
+            <mxGeometry width="240" relative="1" as="geometry">
+              <mxPoint x="1040" y="240" as="sourcePoint" />
+              <mxPoint x="1220" y="240" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="TCP" c4Description="Работа с данными" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="settlement-to-db">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="settlement-service" target="settlement-db" edge="1">
+            <mxGeometry width="240" relative="1" as="geometry">
+              <mxPoint x="1220" y="820" as="sourcePoint" />
+              <mxPoint x="1220" y="910" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="1630" y="770" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="osago-aggregator" c4Type="Container" c4Technology="Kotlin, SpringBoot, Kafka Consumer" c4Description="Специализированный агрегатор для продуктов ОСАГО. Получает данные от страховых компаний, агрегирует тарифы, публикует обновления, обрботка синхронных REST запросов" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="wvRhBmhcWafD7cfI5Zy9-1">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#4CAF50;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#388E3C;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="710" y="1340" width="240" height="140" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="osago-aggregator-db" c4Type="Database" c4Technology="PostgreSQL" c4Description="БД для хранения агрегированных данных по продуктам ОСАГО: тарифы, условия, доступность" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="wvRhBmhcWafD7cfI5Zy9-2">
+          <mxCell style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#4CAF50;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#388E3C;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="150" y="1150" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="TCP" c4Description="Сохранение агрегированных данных ОСАГО" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="wvRhBmhcWafD7cfI5Zy9-3">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#4CAF50;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.583;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="wvRhBmhcWafD7cfI5Zy9-1" target="wvRhBmhcWafD7cfI5Zy9-2" edge="1">
+            <mxGeometry width="240" relative="1" as="geometry">
+              <mxPoint x="810" y="1330" as="sourcePoint" />
+              <mxPoint x="450" y="1220" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="REST / SOAP" c4Description="Получение данных по продуктам ОСАГО (асинхронно, по расписанию)" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="wvRhBmhcWafD7cfI5Zy9-4">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="wvRhBmhcWafD7cfI5Zy9-1" target="insurance-systems" edge="1">
+            <mxGeometry width="240" relative="1" as="geometry">
+              <mxPoint x="1230" y="1310" as="sourcePoint" />
+              <mxPoint x="1298" y="1590" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="Kafka Consumer" c4Description="Подписка на события: 1. RefreshOSAGOProducts 2. InsuranceCompanyUpdated" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="wvRhBmhcWafD7cfI5Zy9-7">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;strokeColor=#9C27B0;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.531;exitY=1.015;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="event-bus" target="wvRhBmhcWafD7cfI5Zy9-1" edge="1">
+            <mxGeometry width="240" relative="1" as="geometry">
+              <mxPoint x="130" y="1850" as="sourcePoint" />
+              <mxPoint x="1290" y="1140" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="829" y="1066" />
+                <mxPoint x="830" y="1066" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="Kafka Producer" c4Description="Публикация событий: 1. OSAGOProductsUpdated 2. OSAGOPriceChanged" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="wvRhBmhcWafD7cfI5Zy9-9">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=2;endFill=1;strokeColor=#9C27B0;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;dashed=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.998;entryY=0.821;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="wvRhBmhcWafD7cfI5Zy9-1" target="event-bus" edge="1">
+            <mxGeometry width="240" relative="1" as="geometry">
+              <mxPoint x="1670" y="1460" as="sourcePoint" />
+              <mxPoint x="1180" y="1250" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="1160" y="1340" />
+                <mxPoint x="1160" y="1041" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="TCP" c4Description="Отправка заявки (fast sync REST)" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="jBrOJx6Q8XdpqYcALNSv-1">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=3;endFill=1;strokeColor=#6F0000;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0.329;entryY=1.014;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#a20025;" edge="1" parent="1" target="core-app">
+            <mxGeometry x="0.2121" width="240" relative="1" as="geometry">
+              <mxPoint x="760" y="1340" as="sourcePoint" />
+              <mxPoint x="340" y="890" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="760" y="1090" />
+                <mxPoint x="340" y="1090" />
+                <mxPoint x="340" y="600" />
+                <mxPoint x="339" y="600" />
+              </Array>
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="TCP" c4Description="Получение решения (async)" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="jBrOJx6Q8XdpqYcALNSv-2">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=3;endFill=1;strokeColor=#6F0000;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;fillColor=#a20025;exitX=0.75;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;" edge="1" parent="1" source="core-app" target="event-bus">
+            <mxGeometry x="0.2121" width="240" relative="1" as="geometry">
+              <mxPoint x="80" y="1360" as="sourcePoint" />
+              <mxPoint x="-140" y="940" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="440" y="968" />
+              </Array>
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="TCP" c4Description="WebSocket / Server-Sent Events" label="&lt;div style=&quot;text-align: left&quot;&gt;&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;&lt;/div&gt;" id="jBrOJx6Q8XdpqYcALNSv-3">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=3;endFill=1;strokeColor=#00CC00;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;fillColor=#a20025;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="web-app" target="core-app">
+            <mxGeometry x="0.1081" width="240" relative="1" as="geometry">
+              <mxPoint x="181" y="-12" as="sourcePoint" />
+              <mxPoint x="360" y="420" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="181" y="20" />
+                <mxPoint x="181" y="210" />
+                <mxPoint x="180" y="210" />
+                <mxPoint x="180" y="230" />
+                <mxPoint x="440" y="230" />
+              </Array>
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <mxCell id="jBrOJx6Q8XdpqYcALNSv-4" value="&lt;div&gt;Возможная доработка для реализации патернов отказоустойчивости&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 19px;&quot;&gt;1. Circuit Breaker&lt;/font&gt;&lt;/b&gt;&lt;br&gt;Где применить:&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- core-app → osago-aggregator (синхронный REST запрос)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- core-app → payment-service (внешний платёжный сервис)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- aggregator → ins urance-systems (внешние системы страховых компаний)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- settlement-service → insurance-systems (внешние системы)&lt;br&gt;&lt;br&gt;&lt;br&gt;Обоснование: внешние сервисы могут быть недоступны или медленно отвечать. Для предотвращаения каскадных сбоев и дает время на восстановление.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size: 19px;&quot;&gt;&lt;b&gt;2. Retry&lt;/b&gt;&lt;/font&gt;&lt;br&gt;Где применить:&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- Transactional Outbox → Kafka (публикация событий из core-app и client-info)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- Kafka Consumer → обработка событий (все сервисы-потребители)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- REST вызовы к внешним API (особенно для оплаты и оформления)&lt;br&gt;&lt;br&gt;&lt;br&gt;Обоснование: временные сетевые сбои, кратковременная недоступность Kafka или внешних сервисов не должны приводить к потере данных.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b&gt;3. Timeout&lt;/b&gt;&lt;/font&gt;&lt;br&gt;Где применить:&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- Все синхронные HTTP вызовы (web → core-app, core-app → osago-aggregator и т.д.)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- Запросы к базам данных (особенно для транзакций outbox)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- Внешние интеграции (страховые компании, платёжные системы)&lt;br&gt;&lt;br&gt;&lt;br&gt;Обоснование: предотвращает зависание потоков и накопление незавершенных запросов.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size: 19px;&quot;&gt;&lt;b&gt;4. Rate Limiting&lt;/b&gt;&lt;/font&gt;&lt;br&gt;Где применить:&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- API core-app (от веб-приложения и партнеров)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- Интеграция с внешними системами (чтобы не превысить квоты API страховых компаний)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- Kafka потребители (для контроля скорости обработки)&lt;br&gt;&lt;br&gt;&lt;br&gt;Обоснование: защита от перегрузки системы, соблюдение лимитов внешних API.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size: 19px;&quot;&gt;&lt;b&gt;5. Bulkhead&lt;/b&gt;&lt;/font&gt;&lt;br&gt;Где применить:&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- Выделенные пулы потоков для разных типов операций в core-app&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;- Отдельные соединения/пулы для критичных операций (оплата) vs non-critical&lt;br&gt;&lt;br&gt;&lt;br&gt;Обоснование: сбой в одном компоненте (например, генерация отчётов) не должен блокировать критичные операции (оформление страховок)." style="vsdxID=5;fillColor=none;gradientColor=none;strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-790" y="710" width="730" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="jBrOJx6Q8XdpqYcALNSv-5" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;p style=&quot;text-align:left;margin-left:0;margin-right:0;margin-top:0px;margin-bottom:0px;text-indent:0;vertical-align:middle;direction:ltr;&quot;&gt;&lt;font style=&quot;font-size:39.51px;font-family:Arial;color:#000000;direction:ltr;letter-spacing:0px;line-height:120%;opacity:1&quot;&gt;Text block&lt;br/&gt;&lt;/font&gt;&lt;/p&gt;&lt;/div&gt;" style="verticalAlign=middle;align=left;overflow=width;vsdxID=6;fillColor=none;gradientColor=none;fillOpacity=85;shape=stencil(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);strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;" vertex="1" parent="jBrOJx6Q8XdpqYcALNSv-4">
+          <mxGeometry y="16.75392670157068" width="726.5566037735849" height="230.36649214659687" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

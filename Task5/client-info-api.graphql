@@ -1,0 +1,176 @@
+# --- Schema ---
+type Query {
+  """
+  Получить информацию о клиенте по ID
+  """
+  client(id: ID!): Client
+  
+  """
+  Получить список клиентов с фильтрацией
+  """
+  clients(filter: ClientFilter, pagination: PaginationInput): ClientList!
+}
+
+# --- Типы данных ---
+
+"""
+Базовый интерфейс для сущностей с персональными данными
+"""
+interface Person {
+  id: ID!
+  name: String!
+  age: Int
+}
+
+"""
+Клиент - основная сущность
+Используем фрагменты для общих полей
+"""
+type Client implements Person {
+  id: ID!
+  name: String!
+  age: Int
+  
+  """
+  Список документов клиента
+  Можно запросить только нужные поля документов
+  """
+  documents: [Document!]
+  
+  """
+  Информация о родственниках
+  """
+  relatives: [Relative!]
+  
+  # Дополнительные поля (примеры из 500 возможных)
+  email: String
+  phone: String
+  address: Address
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""
+Родственник клиента
+Наследует базовые поля от Person
+"""
+type Relative implements Person {
+  id: ID!
+  name: String!
+  age: Int
+  
+  """
+  Тип родственной связи
+  """
+  relationType: RelationType!
+  
+  # Дополнительные поля
+  contactInfo: ContactInfo
+}
+
+"""
+Документ клиента
+"""
+type Document {
+  id: ID!
+  type: DocumentType!
+  number: String!
+  issueDate: DateTime!
+  expiryDate: DateTime
+  
+  # Дополнительные поля
+  issuer: String
+  scanUrl: String
+  isValid: Boolean!
+}
+
+# --- Подтипы для структуризации ---
+"""
+Адрес клиента
+"""
+type Address {
+  street: String!
+  city: String!
+  postalCode: String
+  country: String!
+}
+
+"""
+Контактная информация
+"""
+type ContactInfo {
+  phone: String
+  email: String
+  emergencyContact: Boolean
+}
+
+# --- Перечисления для типизации ---
+"""
+Типы документов
+"""
+enum DocumentType {
+  PASSPORT
+  DRIVER_LICENSE
+  INSURANCE_CERTIFICATE
+  BIRTH_CERTIFICATE
+  OTHER
+}
+
+"""
+Типы родственных связей
+"""
+enum RelationType {
+  SPOUSE
+  CHILD
+  PARENT
+  SIBLING
+  OTHER_RELATIVE
+}
+
+# --- Входные типы для фильтрации ---
+"""
+Фильтр для поиска клиентов
+"""
+input ClientFilter {
+  name: String
+  age: Int
+  ageRange: AgeRangeInput
+  hasDocuments: Boolean
+  documentType: DocumentType
+}
+
+"""
+Диапазон возраста
+"""
+input AgeRangeInput {
+  min: Int
+  max: Int
+}
+
+"""
+Пагинация
+"""
+input PaginationInput {
+  limit: Int! = 20
+  offset: Int! = 0
+}
+
+"""
+Результат запроса списка клиентов
+"""
+type ClientList {
+  items: [Client!]!
+  totalCount: Int!
+  hasNextPage: Boolean!
+}
+
+# --- Скалярные типы ---
+scalar DateTime
+
+# --- Мутации (для полноты примера) ---
+type Mutation {
+  createClient(input: CreateClientInput!): Client!
+  updateClient(id: ID!, input: UpdateClientInput!): Client!
+  addDocument(clientId: ID!, input: DocumentInput!): Document!
+  addRelative(clientId: ID!, input: RelativeInput!): Relative!
+}
